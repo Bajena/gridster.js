@@ -2944,7 +2944,10 @@
             this.gridmap[col] = [];
         }
 
-        this.gridmap[col][row] = false;
+        if (this.gridmap[col].length <= row) {
+            this.gridmap[col][row] = false;
+        }
+
         this.faux_grid.push(coords);
 
         return this;
